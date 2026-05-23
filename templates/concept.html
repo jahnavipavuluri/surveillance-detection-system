@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Concept & Theory — SurveillanceAI</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #f8f7f4; --surface: #ffffff; --border: #e8e5e0;
+      --text: #1a1814; --muted: #8a8680; --accent: #2563eb;
+      --accent-light: #eff6ff; --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    nav {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 0 40px; height: 60px; display: flex; align-items: center;
+      justify-content: space-between; position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links a {
+      padding: 6px 14px; border-radius: 6px; font-size: 0.875rem;
+      font-weight: 500; color: var(--muted); text-decoration: none; transition: all 0.15s;
+    }
+    .nav-links a:hover { background: var(--accent-light); color: var(--accent); }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
+
+    .page-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem; margin-bottom: 6px; letter-spacing: -0.3px;
+    }
+    .page-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 40px; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 32px; margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+    .card h2 { font-size: 1rem; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .card p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+
+    .detect-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+    .detect-list li {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 14px;
+      font-size: 0.875rem; font-weight: 500;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .pipeline {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 10px; margin-top: 14px;
+    }
+    .step {
+      background: var(--accent-light); border-radius: 10px;
+      padding: 14px; text-align: center;
+    }
+    .step .num { font-size: 1.2rem; margin-bottom: 6px; }
+    .step p { font-size: 0.78rem; color: var(--accent); font-weight: 600; line-height: 1.4; }
+
+    .tips { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+    .tips li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.875rem; color: var(--muted); line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 8px; font-size: 0.875rem;
+      font-weight: 600; text-decoration: none; transition: all 0.2s;
+      margin-top: 8px;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { background: var(--bg); }
+    .btn-row { display: flex; gap: 10px; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">Surveillance<span>AI</span></div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/detect">Detect</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-title">Concept & Theory</div>
+    <div class="page-sub">How the surveillance detection system works under the hood.</div>
+
+    <div class="card">
+      <h2>🎯 What It Detects</h2>
+      <p>The system identifies <strong>dangerous, unusual, or harmful human behaviors</strong> in real-time by combining Motion Analysis with the YOLOv8 deep learning model.</p>
+      <ul class="detect-list">
+        <li>💀 Falling / Slipping</li>
+        <li>⚡ Sudden Collapse</li>
+        <li>🔥 Violent Abnormal Movement</li>
+        <li>⚠️ Unusual Body Posture</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>⚙️ Detection Pipeline</h2>
+      <div class="pipeline">
+        <div class="step"><div class="num">📹</div><p>Video / Camera Input</p></div>
+        <div class="step"><div class="num">🔍</div><p>Background Subtraction (MOG2)</p></div>
+        <div class="step"><div class="num">🤖</div><p>YOLOv8 Human Detection</p></div>
+        <div class="step"><div class="num">🔔</div><p>Alarm + Alert Triggered</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>💡 Usage Tips</h2>
+      <ul class="tips">
+        <li>💡 <span>Ensure proper lighting conditions for accurate detection results.</span></li>
+        <li>📷 <span>Camera must capture the full body of the subject in frame.</span></li>
+        <li>🚫 <span>Avoid obstacles or blockages between the camera and subject.</span></li>
+        <li>📐 <span>Position camera at a slight downward angle for best results.</span></li>
+      </ul>
+    </div>
+
+    <div class="btn-row">
+      <a href="/detect" class="btn btn-primary">▶ Start Detection</a>
+      <a href="/" class="btn btn-ghost">← Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
