@@ -97,6 +97,5 @@ http://127.0.0.1:5000
 
 ## 👩‍💻 Developed By
 
-**Pavuluri Jahnavi**  
-B.Tech CSE — KKR & KSR Institute of Technology and Sciences  
+**Pavuluri Jahnavi**    
 GitHub: [github.com/jahnavipavuluri](https://github.com/jahnavipavuluri)
