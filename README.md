@@ -89,14 +89,18 @@ http://127.0.0.1:5000
 
 ## 📸 Screenshots
 
-> Home Page — Start Detection or view Concept & Theory  
-> Detection Page — Live Camera or Upload Video  
-> Real-time ABNORMAL label with red bounding box on threat detection  
+**Home Page**  
+![Home Page](screenshots/screenshot[1].png)
+
+**Concept & Theory Page**  
+![Concept Page](screenshots/screenshot[2].png)
+
+**Detection System**  
+![Detection Page](screenshots/screenshot[3].png)  
 
 ---
 
 ## 👩‍💻 Developed By
 
-**Pavuluri Jahnavi**  
-B.Tech CSE — KKR & KSR Institute of Technology and Sciences  
+**Pavuluri Jahnavi**   
 GitHub: [github.com/jahnavipavuluri](https://github.com/jahnavipavuluri)
